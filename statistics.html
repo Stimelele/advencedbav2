@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Statistics - Advanced BA V2</title>
+  <style>
+    body {
+      background: #121212;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      animation: fadeInDown 0.7s ease forwards;
+      opacity: 0;
+    }
+    .stats-container {
+      background: #1e1e1e;
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 15px #4caf50aa;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+    .stat {
+      font-size: 1.1rem;
+      margin: 12px 0;
+      border-bottom: 1px solid #4caf50;
+      padding-bottom: 6px;
+    }
+    .stat:last-child {
+      border: none;
+    }
+
+    @keyframes fadeInDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+      from {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Bot Statistics</h1>
+
+<div class="stats-container">
+  <div class="stat">Total Commands Used: 1234</div>
+  <div class="stat">Active Users: 567</div>
+  <div class="stat">Servers Connected: 89</div>
+  <div class="stat">Uptime: 72 hours</div>
+</div>
+
+</body>
+</html>
