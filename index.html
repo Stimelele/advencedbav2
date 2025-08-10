@@ -1,123 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ADVENCED BA V2</title>
-  <style>
-    /* Reset i podstawowy styl */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      background-color: #181818;
-      color: #eee;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px;
-    }
-    nav {
-      width: 100%;
-      max-width: 900px;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 50px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 40px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #eee;
-      font-weight: 700;
-      font-size: 1.1rem;
-      position: relative;
-      padding-bottom: 6px;
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeSlideUp 0.6s forwards;
-      transition: color 0.3s ease;
-      cursor: pointer;
-    }
-    nav ul li:nth-child(1) a {
-      animation-delay: 0.1s;
-    }
-    nav ul li:nth-child(2) a {
-      animation-delay: 0.3s;
-    }
-    nav ul li:nth-child(3) a {
-      animation-delay: 0.5s;
-    }
-    nav ul li a::after {
-      content: "";
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0%;
-      height: 2px;
-      background: #4caf50;
-      transition: width 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: #4caf50;
-    }
-    nav ul li a:hover::after {
-      width: 100%;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ADVENCED BA V2</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    @keyframes fadeSlideUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #222;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    padding: 40px 20px;
+  }
 
-    main {
-      max-width: 900px;
-      text-align: center;
-      animation: fadeInContent 1s ease forwards;
-      opacity: 0;
-    }
+  header {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
 
-    @keyframes fadeInContent {
-      to {
-        opacity: 1;
-      }
-    }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+  }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #4caf50;
-    }
+  nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-bottom: 5px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 0.5s forwards;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  nav ul li:nth-child(1) a { animation-delay: 0.1s; }
+  nav ul li:nth-child(2) a { animation-delay: 0.3s; }
+  nav ul li:nth-child(3) a { animation-delay: 0.5s; }
 
-    p.description {
-      font-size: 1.25rem;
-      line-height: 1.5;
-      margin-bottom: 40px;
-      color: #bbb;
-    }
+  nav ul li a:hover {
+    color: #4caf50;
+  }
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #4caf50;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+  nav ul li a:hover::after {
+    width: 100%;
+  }
 
-  </style>
+  @keyframes fadeSlideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  main {
+    max-width: 900px;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #4caf50;
+    margin-bottom: 20px;
+  }
+
+  p.description {
+    font-size: 1.25rem;
+    color: #bbb;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+
+</style>
 </head>
 <body>
 
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="statistics.html">Statistics</a></li>
-    <li><a href="https://discord.gg/kGvPhFvbSN" target="_blank" rel="noopener">Discord</a></li>
-  </ul>
-</nav>
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="statistics.html">Statistics</a></li>
+      <li><a href="https://discord.gg/kGvPhFvbSN" target="_blank" rel="noopener noreferrer">Discord</a></li>
+    </ul>
+  </nav>
+</header>
 
 <main>
   <h1>ADVENCED BA V2</h1>
-  <p class="description">This bot can create amazing Embeds that you design in Discord! Without leaving Discord you can create some of the best messages ever with ABM Menu tools.</p>
+  <p class="description">
+    This bot can create amazing Embeds that you design in Discord! Without leaving Discord you can create some of the best messages ever with ABM Menu tools.
+  </p>
 </main>
 
 </body>
 </html>
+
