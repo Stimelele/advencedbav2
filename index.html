@@ -3,126 +3,180 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ADVENCED BA V2</title>
+<title>Tino Bot</title>
 <style>
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   body {
+    margin: 0;
+    background: radial-gradient(circle at top left, #0a0f23, #000014);
+    color: #ddd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #222;
-    color: #eee;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    padding: 40px 20px;
+    text-align: center;
+    overflow-x: hidden;
   }
-
   header {
-    width: 100%;
-    max-width: 900px;
+    background-color: #090d1e;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    gap: 30px;
+    font-weight: bold;
+    font-size: 16px;
   }
-
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-  }
-
-  nav ul li a {
-    color: #eee;
+  header a {
+    color: #ccc;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.2rem;
     padding-bottom: 5px;
-    position: relative;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlideUp 0.5s forwards;
-    cursor: pointer;
-    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
   }
-  nav ul li:nth-child(1) a { animation-delay: 0.1s; }
-  nav ul li:nth-child(2) a { animation-delay: 0.3s; }
-  nav ul li:nth-child(3) a { animation-delay: 0.5s; }
-
-  nav ul li a:hover {
-    color: #4caf50;
+  header a:hover, header a.active {
+    border-bottom: 2px solid #6ea8ff;
+    color: #6ea8ff;
   }
-  nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: #4caf50;
-    bottom: 0;
-    left: 0;
-    transition: width 0.3s ease;
+  main {
+    padding: 60px 20px 100px;
   }
-  nav ul li a:hover::after {
-    width: 100%;
+  .logo {
+    width: 120px;
+    margin: 0 auto 20px;
+    animation: glow 2.5s ease-in-out infinite alternate;
   }
-
-  @keyframes fadeSlideUp {
+  @keyframes glow {
+    from {
+      filter: drop-shadow(0 0 8px #59a6ff);
+    }
     to {
+      filter: drop-shadow(0 0 16px #4a78d1);
+    }
+  }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+  }
+  h1 span {
+    color: #5c8df6;
+  }
+  p.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+  .btn {
+    background: linear-gradient(145deg, #0b2345, #142e6a);
+    color: #a3b8ff;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border: 1px solid #1f2c56;
+    box-shadow: 0 0 12px #4376ff88;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+  }
+  .btn:hover {
+    background: linear-gradient(145deg, #162e7c, #2443be);
+    box-shadow: 0 0 20px #6b8cffcc;
+    color: #d3deff;
+  }
+  .btn img {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 0 2px #4a78d1);
+  }
+  section.features {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #121a37;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 0 40px #2747af66;
+  }
+  section.features h2 {
+    color: #6ea8ff;
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+  section.features ul {
+    list-style: none;
+    padding: 0;
+  }
+  section.features li {
+    margin: 12px 0;
+    font-size: 1.1rem;
+    color: #a3b8ffcc;
+    position: relative;
+    padding-left: 24px;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  section.features li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #5c8df6;
+    font-weight: 700;
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
       opacity: 1;
       transform: translateY(0);
     }
   }
-
-  main {
-    max-width: 900px;
-    text-align: center;
-    animation: fadeIn 1s ease forwards;
-    opacity: 0;
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-
-  h1 {
-    font-size: 3rem;
-    color: #4caf50;
-    margin-bottom: 20px;
-  }
-
-  p.description {
-    font-size: 1.25rem;
-    color: #bbb;
-    margin-bottom: 40px;
-    line-height: 1.5;
-  }
-
 </style>
 </head>
 <body>
 
 <header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="statistics.html">Statistics</a></li>
-      <li><a href="https://discord.gg/kGvPhFvbSN" target="_blank" rel="noopener noreferrer">Discord</a></li>
-    </ul>
-  </nav>
+  <a href="#" class="active">Home</a>
+  <a href="statistics.html">Statistics</a>
+  <a href="https://top.gg/bot/1285213175968694312">Top.gg</a>
+  <a href="terms.html">Terms of Service</a>
+  <a href="https://discord.gg/yourserver">Server Discord</a>
 </header>
 
 <main>
-  <h1>ADVENCED BA V2</h1>
-  <p class="description">
-    This bot can create amazing Embeds that you design in Discord! Without leaving Discord you can create some of the best messages ever with ABM Menu tools.
-  </p>
+  <img src="BA.gif" alt="Tino Bot Logo" class="logo" />
+  <h1>Tino <span>Bot</span></h1>
+  <p class="subtitle">The most loved Italian Discord bot. Intelligent, customizable, and always with you!</p>
+
+  <div class="btn-group">
+    <a href="https://discord.com/oauth2/authorize?client_id=1285213175968694312&scope=bot&permissions=8" target="_blank" rel="noopener" class="btn">
+      <img src="BA.gif" alt="Bot Icon" /> Add Tino Bot
+    </a>
+    <a href="https://discord.gg/yourserver" target="_blank" rel="noopener" class="btn">
+      <img src="discord-icon.png" alt="Discord Icon" /> Join Server
+    </a>
+  </div>
+
+  <section class="features">
+    <h2>What can Tino Bot do?</h2>
+    <ul>
+      <li>Useful commands</li>
+      <li>Fun games</li>
+      <li>Moderation</li>
+      <li>Logging</li>
+      <li>Advanced server management</li>
+      <li>And much more!</li>
+    </ul>
+  </section>
 </main>
 
 </body>
