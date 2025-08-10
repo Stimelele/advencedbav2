@@ -3,71 +3,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Statistics - Advanced BA V2</title>
+  <title>Statistics - ADVENCED BA V2</title>
   <style>
+    /* Ten sam styl co w index.html dla spójności */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
     body {
-      background: #121212;
+      background-color: #181818;
       color: #eee;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 30px;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 30px 20px;
     }
-    h1 {
-      margin-bottom: 20px;
-      animation: fadeInDown 0.7s ease forwards;
-      opacity: 0;
+    nav {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
     }
-    .stats-container {
-      background: #1e1e1e;
-      padding: 20px 40px;
-      border-radius: 10px;
-      width: 300px;
-      box-shadow: 0 0 15px #4caf50aa;
-      animation: fadeIn 1s ease forwards;
-      opacity: 0;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
     }
-    .stat {
+    nav ul li a {
+      text-decoration: none;
+      color: #eee;
+      font-weight: 700;
       font-size: 1.1rem;
-      margin: 12px 0;
-      border-bottom: 1px solid #4caf50;
+      position: relative;
       padding-bottom: 6px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeSlideUp 0.6s forwards;
+      transition: color 0.3s ease;
+      cursor: pointer;
     }
-    .stat:last-child {
-      border: none;
+    nav ul li:nth-child(1) a {
+      animation-delay: 0.1s;
+    }
+    nav ul li:nth-child(2) a {
+      animation-delay: 0.3s;
+      color: #4caf50; /* podkreślamy aktywną podstronę */
+    }
+    nav ul li:nth-child(3) a {
+      animation-delay: 0.5s;
+    }
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0%;
+      height: 2px;
+      background: #4caf50;
+      transition: width 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #4caf50;
+    }
+    nav ul li a:hover::after {
+      width: 100%;
     }
 
-    @keyframes fadeInDown {
+    @keyframes fadeSlideUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
     }
-    @keyframes fadeIn {
+
+    main {
+      max-width: 900px;
+      animation: fadeInContent 1s ease forwards;
+      opacity: 0;
+      text-align: center;
+    }
+
+    @keyframes fadeInContent {
       to {
         opacity: 1;
       }
-      from {
-        opacity: 0;
-      }
     }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #4caf50;
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 35px;
+    }
+
+    .stat-box {
+      background-color: #222;
+      border-radius: 12px;
+      padding: 25px 35px;
+      width: 220px;
+      box-shadow: 0 0 15px #4caf5070;
+      color: #ddd;
+      font-weight: 600;
+      font-size: 1.3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 0.7s forwards;
+    }
+
+    /* animacja z opóźnieniem dla ładnego efektu */
+    .stat-box:nth-child(1) { animation-delay: 0.3s; }
+    .stat-box:nth-child(2) { animation-delay: 0.6s; }
+    .stat-box:nth-child(3) { animation-delay: 0.9s; }
+    .stat-box:nth-child(4) { animation-delay: 1.2s; }
+
+    .stat-value {
+      color: #4caf50;
+      font-size: 2.7rem;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #bbb;
+    }
+
   </style>
 </head>
 <body>
 
-<h1>Bot Statistics</h1>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="statistics.html" style="color:#4caf50;">Statistics</a></li>
+    <li><a href="https://discord.gg/kGvPhFvbSN" target="_blank" rel="noopener">Discord</a></li>
+  </ul>
+</nav>
 
-<div class="stats-container">
-  <div class="stat">Total Commands Used: 1234</div>
-  <div class="stat">Active Users: 567</div>
-  <div class="stat">Servers Connected: 89</div>
-  <div class="stat">Uptime: 72 hours</div>
-</div>
+<main>
+  <h1>Bot Statistics</h1>
+  <div class="stats">
+    <div class="stat-box">
+      <div class="stat-value" id="users">12,345</div>
+      <div class="stat-label">Active Users</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value" id="servers">234</div>
+      <div class="stat-label">Servers Connected</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value" id="commands">56,789</div>
+      <div class="stat-label">Commands Used</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value" id="uptime">12d 5h 42m</div>
+      <div class="stat-label">Uptime</div>
+    </div>
+  </div>
+</main>
 
 </body>
 </html>
