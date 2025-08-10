@@ -2,82 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADVENCED BA V2</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advanced BA V2</title>
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background: #0e0e16;
-      color: white;
+      background: #121212;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
     }
-    .gradient-text {
-      background: linear-gradient(90deg, #4f46e5, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    nav {
+      background: #1e1e1e;
+      padding: 15px 30px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0; padding: 0;
+    }
+    nav ul li a {
+      color: #eee;
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 5px;
+      transition: color 0.3s ease;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeSlideUp 0.6s forwards;
+    }
+    nav ul li:nth-child(1) a { animation-delay: 0.1s; }
+    nav ul li:nth-child(2) a { animation-delay: 0.2s; }
+    nav ul li:nth-child(3) a { animation-delay: 0.3s; }
+    nav ul li a:hover {
+      color: #4caf50;
+    }
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #4caf50;
+      transition: width 0.3s ease;
+    }
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    main {
+      padding: 40px 30px;
+      font-size: 1.2rem;
+      line-height: 1.6;
     }
   </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-  <!-- Navbar -->
-  <nav class="flex justify-between items-center px-6 py-4 bg-black bg-opacity-50 border-b border-gray-800">
-    <div class="text-lg font-semibold text-white flex items-center gap-2">
-      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Bot Logo" class="w-6 h-6">
-      ADVENCED BA V2
-    </div>
-    <div class="space-x-6 text-sm">
-      <a href="#" class="text-white hover:text-blue-400">Home</a>
-      <a href="#features" class="text-white hover:text-blue-400">Features</a>
-      <a href="https://discord.com/oauth2/authorize?client_id=1285213175968694312&scope=bot+applications.commands&permissions=8" class="text-white hover:text-blue-400">Invite</a>
-      <a href="https://discord.gg/kGvPhFvbSN" class="text-white hover:text-blue-400">Support</a>
-    </div>
-  </nav>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="statistics.html">Statistics</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
 
-  <!-- Hero -->
-  <section class="text-center py-20 px-6">
-    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" class="mx-auto w-20 h-20 mb-6" alt="Bot Icon">
-    <h1 class="text-4xl md:text-5xl font-extrabold gradient-text">ADVENCED BA V2</h1>
-    <p class="text-lg mt-4 max-w-xl mx-auto text-gray-300">
-      This bot can create amazing Embeds that you design in Discord! Without leaving Discord you can create some of the best messages ever with ABM Menu tools.
-    </p>
-    <div class="mt-8 flex justify-center gap-4 flex-wrap">
-      <a href="https://discord.com/oauth2/authorize?client_id=1285213175968694312&scope=bot+applications.commands&permissions=8" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition">
-        🤖 Invite Bot
-      </a>
-      <a href="https://discord.gg/kGvPhFvbSN" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition">
-        💬 Join Support Server
-      </a>
-    </div>
-  </section>
+<main>
+  <h1>Welcome to Advanced BA V2</h1>
+  <p>This bot can create amazing Embeds that you design in Discord! Without leaving Discord you can create some of the best messages ever with ABM Menu tools.</p>
+</main>
 
-  <!-- Features -->
-  <section id="features" class="bg-[#10101a] py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-10 gradient-text">What Can ADVENCED BA V2 Do?</h2>
-    <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-      <div class="bg-[#181825] p-6 rounded-xl border border-gray-800 text-center">
-        <h3 class="text-xl font-semibold mb-2">🧩 Embed Builder</h3>
-        <p class="text-gray-400">Design and send advanced embeds directly in Discord.</p>
-      </div>
-      <div class="bg-[#181825] p-6 rounded-xl border border-gray-800 text-center">
-        <h3 class="text-xl font-semibold mb-2">🎛️ Reaction Menus</h3>
-        <p class="text-gray-400">Create interactive message menus with reactions.</p>
-      </div>
-      <div class="bg-[#181825] p-6 rounded-xl border border-gray-800 text-center">
-        <h3 class="text-xl font-semibold mb-2">📅 Auto Messages</h3>
-        <p class="text-gray-400">Schedule and automate announcements.</p>
-      </div>
-      <div class="bg-[#181825] p-6 rounded-xl border border-gray-800 text-center">
-        <h3 class="text-xl font-semibold mb-2">⚙️ Custom Tools</h3>
-        <p class="text-gray-400">Advanced utilities to boost your server workflow.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center text-gray-400 py-6 border-t border-gray-800">
-    © 2025 ADVENCED BA V2. All rights reserved.
-  </footer>
 </body>
 </html>
