@@ -56,53 +56,77 @@
       left: 0;
       border-radius: 2px;
     }
-    .price-box {
-      background: #161b22;
+
+    /* Unified premium box */
+    .premium-box {
       border: 2px solid gold;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+      display: inline-block;
       padding: 20px 40px;
       margin-top: 50px;
       border-radius: 12px;
+      animation: pulse 2s infinite;
       box-shadow: 0 0 15px gold;
-      font-size: 2rem;
-      font-weight: 700;
-      color: gold;
-    }
-    .price-box img {
-      width: 32px;
-      height: 32px;
-    }
-    .features {
       background: #161b22;
-      margin: 40px auto;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
       max-width: 500px;
       text-align: left;
     }
-    .features h2 {
-      color: #58a6ff;
+    .premium-box h2 {
       text-align: center;
+      font-weight: bold;
+      color: white;
     }
-    .features ul {
+    .price {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 20px;
+    }
+    .price img {
+      width: 28px;
+      height: 28px;
+    }
+    .premium-box ul {
       list-style: none;
       padding: 0;
-      margin-top: 20px;
+      margin: 20px 0;
     }
-    .features ul li {
+    .premium-box ul li {
       position: relative;
       padding-left: 28px;
       margin-bottom: 12px;
       color: #c9d1d9;
     }
-    .features ul li::before {
+    .premium-box ul li::before {
       content: '★';
       position: absolute;
       left: 0;
       color: gold;
+    }
+    .order-btn {
+      display: inline-block;
+      background: gold;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s, background 0.3s;
+      text-align: center;
+      margin-top: 15px;
+    }
+    .order-btn:hover {
+      background: #ffd700cc;
+      transform: scale(1.05);
+    }
+    /* Animation */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px gold; }
+      50% { box-shadow: 0 0 30px gold; }
+      100% { box-shadow: 0 0 15px gold; }
     }
   </style>
 </head>
@@ -123,20 +147,31 @@
   </header>
 
   <main>
-    <div class="price-box">
-      <img src="https://cdn-icons-png.flaticon.com/512/825/825508.png" alt="RBX icon" />
-      Cena: 100 RBX
+    <div class="premium-box">
+      <h2>Premium Package</h2>
+      <div class="price">
+        <img src="https://cdn-icons-png.flaticon.com/512/825/825508.png" alt="RBX icon" />
+        100 RBX
+      </div>
+      <ul>
+        <li>Unlimited embed creator access</li>
+        <li>Access to all admin tools</li>
+        <li>Advanced filtering and moderation</li>
+        <li>Automatic premium messages</li>
+        <li>Faster support and priority updates</li>
+        <li>Exclusive premium-only features</li>
+      </ul>
+      <a href="#howto" class="order-btn">How to order?</a>
     </div>
 
-    <section class="features">
-      <h2>Co daje Premium?</h2>
-      <ul>
-        <li>Brak limitów w kreatorze embedów</li>
-        <li>Dostęp do wszystkich narzędzi, w tym administracyjnych</li>
-        <li>Zaawansowane filtrowanie i moderacja</li>
-        <li>Automatyczne wiadomości premium</li>
-        <li>Szybszy support i priorytet w aktualizacjach</li>
-        <li>Ekskluzywne funkcje tylko dla premium</li>
+    <section id="howto" style="margin-top: 40px;">
+      <h2 style="color: gold;">How to Order Premium</h2>
+      <ul style="max-width: 500px; margin: auto; text-align: left; list-style: none; padding: 0;">
+        <li>Send 100 RBX to our Roblox account <b>BA_Premium</b></li>
+        <li>Take a screenshot of the transaction</li>
+        <li>Join our <a href="https://discord.gg/kGvPhFvbSN" style="color: gold;">Discord Server</a></li>
+        <li>Open a ticket and send the screenshot</li>
+        <li>Wait for staff confirmation</li>
       </ul>
     </section>
   </main>
